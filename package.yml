@@ -1,0 +1,22 @@
+package: fe_replacer
+version: dev
+author: Wolfgang Bund
+supportpage: https://github.com/dtp-op/
+
+page:
+    title: FE Replacer
+    perm: admin
+#    block: system
+    pjax: false
+    subpages:
+        settings: { title: 'Einstellungen', perm: 'global_settings[settings]', pjax: false }
+
+
+# Load project addon late to be sure that
+#   - all other addons are booted before
+#   - the fragments from project addon are always "winning" over other fragment dirs
+#   - language keys of other addons can be overridden
+#   - ...
+#
+# Don't use `load: late` in public addons, rely on redaxo's default order resolution (by dependencies) instead
+
